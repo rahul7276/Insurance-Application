@@ -15,4 +15,4 @@
     command: sudo docker stop $(docker ps -aq)
     command: sudo docker rm $(docker ps -aq)
     command: sudo docker rmi $(docker images -q)
-    command: sudo docker run -itd -p 8082:8081 shanbhagrahul7276/insureme
+    command: sudo docker run -itd -p 8081:8081 shanbhagrahul7276/insureme
