@@ -12,7 +12,14 @@
     command: sudo systemctl start docker
     command: chmod 777 /var/run/docker.sock
 
-  - name: deploy insureme application
+  - name: Stop containers
     command: sudo docker stop $(docker ps -aq)
+    
+  - name: Remove containers
     command: sudo docker rm $(docker ps -aq)
+    
+  - name: Remove images
+    command: sudo docker rmi $(docker images -q)
+  
+  - name: deploy insureme application
     command: sudo docker run -itd -p 8081:8081 shanbhagrahul7276/insureme
