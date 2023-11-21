@@ -9,10 +9,10 @@
     command: sudo apt install -y docker.io
 
   - name: start docker service
-    command: sudo systemctl restart docker
+    command: sudo systemctl start docker
     command: chmod 777 /var/run/docker.sock
-    command: sudo docker stop $(docker ps -aq)
-    command: sudo docker rm $(docker ps -aq)
 
   - name: deploy insureme application
+    command: sudo docker stop $(docker ps -aq)
+    command: sudo docker rm $(docker ps -aq)
     command: sudo docker run -itd -p 8081:8081 shanbhagrahul7276/insureme
