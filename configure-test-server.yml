@@ -9,7 +9,10 @@
     command: sudo apt install -y docker.io
 
   - name: start docker service
+    command: sudo docker network rm
+    command: sudo systemctl stop docker
     command: sudo systemctl start docker
+    command: sudo docker network create
 
   - name: deploy insureme application
     command: sudo docker stop $(docker ps -aq)
