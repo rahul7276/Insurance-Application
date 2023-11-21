@@ -12,7 +12,7 @@
     command: sudo docker network rm
     command: sudo systemctl stop docker
     command: sudo systemctl start docker
-    command: sudo docker network create
+    command: sudo docker network create -d
 
   - name: deploy insureme application
     command: sudo docker stop $(docker ps -aq)
