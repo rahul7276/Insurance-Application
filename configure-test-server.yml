@@ -13,13 +13,10 @@
     command: chmod 777 /var/run/docker.sock
 
   - name: Stop containers
-    command: sudo docker stop $(docker ps -aq)
+    command: sudo docker stop insureme
     
   - name: Remove containers
-    command: sudo docker rm $(docker ps -aq)
-    
-  - name: Remove images
-    command: sudo docker rmi $(docker images -q)
-  
+    command: sudo docker rm insureme
+      
   - name: deploy insureme application
-    command: sudo docker run -itd -p 8081:8081 shanbhagrahul7276/insureme
+    command: sudo docker run -itd -p 8081:8081 --name insureme shanbhagrahul7276/insureme
