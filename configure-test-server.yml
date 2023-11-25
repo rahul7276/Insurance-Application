@@ -10,7 +10,7 @@
 
   - name: start docker service
     command: sudo systemctl start docker
-    command: chmod 777 /var/run/docker.sock
+    command: chmod 666 /var/run/docker.sock
     
   - name: deploy insureme application
     command: sudo docker run -itd -p 8081:8081 --name insureme shanbhagrahul7276/insureme
